@@ -1,0 +1,148 @@
+<html>
+<head>
+<meta charset="uft-8">
+<title>Sign Up Form</title>
+<style>
+body{
+  margin:0;
+   padding:0;
+   font-family:sans-serif;
+   
+}
+#txtbox{
+height:100px;
+}
+.box{
+  width:300px;
+  padding:40px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:#191919;
+  text-align:center;
+ }
+ .box h1{
+  color:white;
+  text-transform:uppercase;
+  font-weight:500;
+ }
+ .box input[type="text"],.box input[type="password"]{
+  border:0;
+  background:none;
+  display:block;
+  margin:20px auto;
+  text-align:center;
+  border:2px solid #3498db;
+  padding:14px 10px;
+  width:200px;
+  outline:none;
+  color:white;
+  border-radius:24px;
+  transition:0.25s;
+}
+.box input[type="text"]:focus,.box input[type="password"]:focus{
+width:280px;
+border-color:#2ecc71;
+
+}
+.box input[type="submit"]{
+border:0;
+  background:none;
+  display:block;
+  margin:20px auto;
+  text-align:center;
+  border:2px solid #2ecc71 ;
+  padding:14px 40px;
+  width:200px;
+  outline:none;
+  color:white;
+  border-radius:24px;
+  transition:0.25s;
+  cursor:pointer;
+}
+.box input[type="submit"]:hover{
+background:#2ecc71;
+}
+h4{
+ color:white;
+}
+</style>
+
+<SCRIPT type="text/javascript">
+function validateUrPw(thisform)
+{
+	var username= thisform.username.value;
+	var password= thisform.password.value;
+	var email=thisform.email.value;
+        var phonenumber=thisform.phonenumber.value;
+	if(username=="")
+	{
+		alert("Please enter the user name");	
+		thisform.username.focus();
+		return false;
+
+	}
+		if(username.length<6)
+	{
+		alert("User name must be of atleast six characters");	
+		thisform.username.focus();
+		return false;
+	}
+	if(email=="")
+	{
+		alert("Please enter the email");	
+		thisform.email.focus();
+		return false;
+	}
+	if(password=="")
+	{
+		alert("Please enter the password");	
+		thisform.password.focus();
+		return false;
+	}
+	if(password.length<8)
+	{
+		alert("Password must contain atleast 8 digits");	
+		thisform.password.focus();
+		return false;
+	}
+        if(phonenumber==null||phonenumber=="")
+	{
+		alert("enter the phone number");
+		thisform.phonenumber.focus();	
+		return false;
+	}
+
+	if(phonenumber.length<10)
+	{
+		alert("phone number must have atleast 10 digits");
+		thisform.phonenumber.focus();	
+		return false;
+	}
+
+	if(isNaN(phonenumber))
+	{
+		alert("Invalid phone number");
+		thisform.phonenumber.focus();	
+		return false;
+	}
+		return true;	
+}
+</SCRIPT>
+
+
+</head>
+<body background="nn.jpeg">
+<form class="box" action="connect2.php" method="post" onsubmit="return validateUrPw(this)">
+<h1>Sign Up</h1>
+<input type="text" name="username" placeholder="username" >
+<input type="text" name="email" placeholder="email">
+<input type="password" name="password" placeholder="Password">
+<input type="text" name="phonenumber" placeholder="phonenumber">
+<input type="text" name="address" placeholder="Address" id="txtbox" required>
+<input type="submit" name="signup" value="Register" id="btn">
+<h4>Already have an account?Login here<a href="login3.html">LOGIN</a></h4>
+</form>
+</body>
+</html>
